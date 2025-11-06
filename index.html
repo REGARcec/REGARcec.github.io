@@ -3,81 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basir Cyber Squad</title>
+    <title>Basir Cyber Squad - Cybersecurity Education & Ethical Research</title>
+    <meta name="description" content="Basir Cyber Squad - Platform untuk tools keamanan siber, eksplorasi digital, dan inovasi teknologi.">
+    <meta name="keywords" content="cyber security, hacking tools, password generator, IP lookup, hash generator, base64 encoder">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo-mark.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="matrix-rain"></div>
     <header>
-        <h1 id="title">Basir Cyber Squad</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#tools">Tools</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo-horizontal.png" alt="Basir Cyber Squad Logo" class="logo-horizontal">
+                <span class="tagline">Cybersecurity Education & Ethical Research</span>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#tools">Tools</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="cta-button primary">Mulai</a>
+        </div>
     </header>
 
-    <section id="intro">
-        <div class="terminal">
-            <p class="typing">Welcome to Basir Cyber Squad... Initializing...</p>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Amankan Dunia Digital Bersama Kami</h1>
+                <p>Pelajari keamanan siber melalui pendidikan praktis dan penelitian etis. Bergabunglah dengan komunitas profesional untuk membangun masa depan yang lebih aman.</p>
+                <div class="hero-ctas">
+                    <a href="#about" class="cta-button primary">Pelajari Lebih</a>
+                    <a href="#contact" class="cta-button secondary">Bergabung</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/hero-illustration.png" alt="Cybersecurity team collaboration illustration" class="hero-image">
+            </div>
+        </div>
+        <div class="trusted-badges">
+            <div class="badge">500+ Peserta</div>
+            <div class="badge">10+ Kursus</div>
+            <div class="badge">Certified Ethical</div>
         </div>
     </section>
 
     <section id="about">
-        <h2>About Us</h2>
-        <p>Kami adalah squad cyber yang fokus pada keamanan digital, eksplorasi, dan inovasi. Bergabunglah dengan kami untuk belajar dan berbagi pengetahuan.</p>
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p class="lead">Basir Cyber Squad adalah komunitas yang berkomitmen pada pendidikan keamanan siber dan penelitian etis. Kami menyediakan platform untuk belajar, berbagi pengetahuan, dan berkontribusi pada ekosistem keamanan digital yang lebih baik.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Misi Kami</h3>
+                    <p>Mendidik generasi baru ahli keamanan siber melalui pendekatan praktis dan etis.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Nilai Kami</h3>
+                    <p>Integritas, inovasi, dan kolaborasi dalam setiap aspek kegiatan kami.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Dampak Kami</h3>
+                    <p>Telah melatih ratusan profesional dan berkontribusi pada penelitian keamanan terdepan.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="tools">
-        <h2>Tools</h2>
-        <div class="tool-grid">
-            <div class="tool">
-                <h3>Password Generator</h3>
-                <p>Generate password kuat.</p>
-                <button onclick="generatePassword()">Generate</button>
-                <p id="password-output"></p>
-            </div>
-            <div class="tool">
-                <h3>IP Lookup</h3>
-                <p>Cek informasi IP.</p>
-                <input type="text" id="ip-input" placeholder="Masukkan IP">
-                <button onclick="lookupIP()">Lookup</button>
-                <p id="ip-output"></p>
-            </div>
-            <div class="tool">
-                <h3>Hash Generator</h3>
-                <p>Generate hash dari teks.</p>
-                <input type="text" id="hash-input" placeholder="Masukkan teks">
-                <select id="hash-type">
-                    <option value="md5">MD5</option>
-                    <option value="sha256">SHA-256</option>
-                </select>
-                <button onclick="generateHash()">Generate Hash</button>
-                <p id="hash-output"></p>
-            </div>
-            <div class="tool">
-                <h3>Base64 Encoder/Decoder</h3>
-                <p>Encode atau decode Base64.</p>
-                <textarea id="base64-input" placeholder="Masukkan teks"></textarea>
-                <button onclick="encodeBase64()">Encode</button>
-                <button onclick="decodeBase64()">Decode</button>
-                <p id="base64-output"></p>
+        <div class="container">
+            <h2>Alat Keamanan</h2>
+            <p class="lead">Eksplorasi berbagai alat praktis untuk memahami konsep keamanan siber secara langsung.</p>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🔐</div>
+                    <h3>Password Generator</h3>
+                    <p>Buat password kuat untuk melindungi akun Anda.</p>
+                    <button onclick="generatePassword()" class="tool-button">Generate</button>
+                    <p id="password-output" class="tool-output"></p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🌐</div>
+                    <h3>IP Lookup</h3>
+                    <p>Periksa informasi detail tentang alamat IP.</p>
+                    <input type="text" id="ip-input" placeholder="Masukkan IP" class="tool-input">
+                    <button onclick="lookupIP()" class="tool-button">Lookup</button>
+                    <p id="ip-output" class="tool-output"></p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🔒</div>
+                    <h3>Hash Generator</h3>
+                    <p>Generate hash untuk verifikasi integritas data.</p>
+                    <input type="text" id="hash-input" placeholder="Masukkan teks" class="tool-input">
+                    <select id="hash-type" class="tool-select">
+                        <option value="md5">MD5</option>
+                        <option value="sha256">SHA-256</option>
+                    </select>
+                    <button onclick="generateHash()" class="tool-button">Generate Hash</button>
+                    <p id="hash-output" class="tool-output"></p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">📝</div>
+                    <h3>Base64 Encoder/Decoder</h3>
+                    <p>Encode atau decode data dalam format Base64.</p>
+                    <textarea id="base64-input" placeholder="Masukkan teks" class="tool-textarea"></textarea>
+                    <div class="button-group">
+                        <button onclick="encodeBase64()" class="tool-button">Encode</button>
+                        <button onclick="decodeBase64()" class="tool-button">Decode</button>
+                    </div>
+                    <p id="base64-output" class="tool-output"></p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Nama" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Pesan" required></textarea>
-            <button type="submit">Kirim</button>
-        </form>
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p class="lead">Siap untuk memulai perjalanan Anda dalam keamanan siber? Hubungi kami untuk informasi lebih lanjut.</p>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button primary">Kirim Pesan</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 Basir Cyber Squad. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Kami adalah komunitas yang fokus pada pendidikan keamanan siber dan penelitian etis.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#about">Courses</a></li>
+                        <li><a href="#about">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Responsible Disclosure</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: info@basircybersquad.com</li>
+                        <li>Discord: Basir Cyber Squad</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Basir Cyber Squad. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -1,4 +1,4 @@
-// Scroll Reveal
+// Scroll Reveal Animation
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -7,9 +7,55 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card, .section').forEach(el => observer.observe(el));
+document.querySelectorAll('section, .tool-card, .about-card').forEach(el => observer.observe(el));
 
-// Fungsi Generate Password
+// Smooth Scrolling for Navigation
+document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
+
+// Contact Form Handling with Validation
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+        alert('Harap isi semua field yang diperlukan.');
+        return;
+    }
+
+    if (!isValidEmail(email)) {
+        alert('Harap masukkan alamat email yang valid.');
+        return;
+    }
+
+    // Simulate form submission
+    alert('Pesan telah dikirim! Terima kasih atas kontaknya.');
+    this.reset();
+});
+
+// Email validation helper
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Tool Functions with Error Handling
 function generatePassword() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
     let password = '';
@@ -19,90 +65,106 @@ function generatePassword() {
     document.getElementById('password-output').innerText = password;
 }
 
-// Fungsi IP Lookup
 async function lookupIP() {
-    const ip = document.getElementById('ip-input').value;
-    if (!ip) return alert('Masukkan IP!');
+    const ip = document.getElementById('ip-input').value.trim();
+    const output = document.getElementById('ip-output');
+
+    if (!ip) {
+        output.innerText = 'Harap masukkan alamat IP.';
+        return;
+    }
+
+    output.innerText = 'Memuat...';
+
     try {
         const response = await fetch(`https://ipapi.co/${ip}/json/`);
+        if (!response.ok) throw new Error('IP tidak ditemukan atau API error.');
         const data = await response.json();
-        document.getElementById('ip-output').innerText = JSON.stringify(data, null, 2);
+        output.innerText = JSON.stringify(data, null, 2);
     } catch (error) {
-        document.getElementById('ip-output').innerText = 'Error: ' + error.message;
+        output.innerText = 'Error: ' + error.message;
     }
 }
 
-// Typing Animation for Intro
-function typeWriter(text, element, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-// Smooth Scrolling for Navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Contact Form Handling
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Pesan telah dikirim! Terima kasih atas kontaknya.');
-    this.reset();
-});
-
-// Fungsi Hash Generator
 async function generateHash() {
-    const text = document.getElementById('hash-input').value;
+    const text = document.getElementById('hash-input').value.trim();
     const type = document.getElementById('hash-type').value;
-    if (!text) return alert('Masukkan teks!');
+    const output = document.getElementById('hash-output');
+
+    if (!text) {
+        output.innerText = 'Harap masukkan teks.';
+        return;
+    }
+
+    output.innerText = 'Memproses...';
+
     try {
         const encoder = new TextEncoder();
         const data = encoder.encode(text);
         const hashBuffer = await crypto.subtle.digest(type.toUpperCase(), data);
         const hashArray = Array.from(new Uint8Array(hashBuffer));
         const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        document.getElementById('hash-output').innerText = hashHex;
+        output.innerText = hashHex;
     } catch (error) {
-        document.getElementById('hash-output').innerText = 'Error: ' + error.message;
+        output.innerText = 'Error: ' + error.message;
     }
 }
 
-// Fungsi Base64 Encode
 function encodeBase64() {
-    const text = document.getElementById('base64-input').value;
-    if (!text) return alert('Masukkan teks!');
-    const encoded = btoa(text);
-    document.getElementById('base64-output').innerText = encoded;
+    const text = document.getElementById('base64-input').value.trim();
+    const output = document.getElementById('base64-output');
+
+    if (!text) {
+        output.innerText = 'Harap masukkan teks.';
+        return;
+    }
+
+    try {
+        const encoded = btoa(text);
+        output.innerText = encoded;
+    } catch (error) {
+        output.innerText = 'Error: ' + error.message;
+    }
 }
 
-// Fungsi Base64 Decode
 function decodeBase64() {
-    const text = document.getElementById('base64-input').value;
-    if (!text) return alert('Masukkan teks!');
+    const text = document.getElementById('base64-input').value.trim();
+    const output = document.getElementById('base64-output');
+
+    if (!text) {
+        output.innerText = 'Harap masukkan teks.';
+        return;
+    }
+
     try {
         const decoded = atob(text);
-        document.getElementById('base64-output').innerText = decoded;
+        output.innerText = decoded;
     } catch (error) {
-        document.getElementById('base64-output').innerText = 'Error: Invalid Base64';
+        output.innerText = 'Error: Base64 tidak valid.';
     }
 }
+
+// Keyboard Navigation Support
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+        const focusedElement = document.activeElement;
+        if (focusedElement.classList.contains('tool-button')) {
+            e.preventDefault();
+            focusedElement.click();
+        }
+    }
+});
 
 // Initialize on load
 window.addEventListener('load', function() {
-    const introText = document.querySelector('.typing');
-    typeWriter('Welcome to Basir Cyber Squad... Initializing...', introText);
+    // Add focus styles for accessibility
+    const style = document.createElement('style');
+    style.textContent = `
+        .tool-input:focus, .tool-select:focus, .tool-textarea:focus,
+        .form-group input:focus, .form-group textarea:focus {
+            outline: 2px solid var(--cyan-accent);
+            outline-offset: 2px;
+        }
+    `;
+    document.head.appendChild(style);
 });

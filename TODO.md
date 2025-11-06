@@ -1,30 +1,39 @@
-# TODO List for Basir Cyber Squad Website
+# TODO List for Basir Cyber Squad Website Redesign
 
-## Step 1: Fix and Complete Existing Code
-- [x] Complete the truncated script.js file (IP lookup function)
-- [x] Add reveal animation CSS for scroll effects
-- [x] Test basic functionality (password generator, IP lookup)
+## Step 1: Update HTML Structure
+- [x] Add logo (horizontal and mark versions) and tagline to header
+- [x] Restructure hero section with title, subtitle, CTAs, and trusted badges
+- [x] Enhance About section with team info, credentials, and case studies
+- [x] Convert tools to professional cards with consistent design
+- [x] Update footer with 4 columns (About, Resources, Legal, Contact + social links)
+- [x] Add sections for services/resources, testimonials/credentials
 
-## Step 2: Enhance Styling and Add More Features
-- [x] Add more hacker-themed CSS effects (glowing borders, animations, backgrounds)
-- [x] Add more tools/features (e.g., hash generator, Base64 encoder/decoder)
-- [x] Improve responsiveness and add mobile-friendly styles
-- [x] Add matrix rain background effect
+## Step 2: Update CSS for Professional Theme
+- [x] Change color palette: charcoal dominant, cyan/teal accent, neutral grays, soft orange for secondary CTA
+- [x] Update fonts: Inter/Poppins for headings, Roboto/Open Sans for body (min 16px)
+- [x] Remove hacker effects: matrix rain, glowing, green accents
+- [x] Implement grid layout (12-column) with generous white space
+- [x] Add subtle shadows, hover effects (scale 1.03, soft shadow), transitions 180-250ms
+- [x] Ensure high contrast for accessibility (WCAG AA)
+- [x] Make fully responsive, prioritize mobile UX
 
-## Step 3: Add Interactive Elements
-- [x] Implement typing animation for intro text
-- [x] Add smooth scrolling for navigation
-- [x] Enhance contact form with validation and submission handling
-- [ ] Add dark mode toggle or more themes (optional)
+## Step 3: Update JavaScript for Subtle Interactions
+- [x] Remove typing animation, replace with static hero text
+- [x] Add microinteractions: hover elevations, scroll reveals (fade + slide)
+- [x] Keep tool functionalities but enhance UX (loading skeletons if needed)
+- [x] Ensure keyboard navigation and screen reader support
+- [x] Add form validation and better error handling
 
-## Step 4: Make Website Accessible Online
-- [ ] Set up GitHub repository for the project
-- [ ] Deploy to GitHub Pages or Netlify for public access
-- [ ] Ensure all assets are properly linked and working online
-- [ ] Add meta tags for SEO and social sharing
+## Step 4: Add Professional Elements
+- [ ] Create logo assets (horizontal, mark) in assets/ folder
+- [ ] Add high-quality images/illustrations for hero and team
+- [ ] Implement search functionality with auto-suggestions
+- [ ] Add legal/ethical disclaimers in footer and dedicated page
+- [ ] Include social proof: client badges, participant numbers
 
 ## Step 5: Testing and Final Touches
-- [ ] Test all features across different browsers
-- [ ] Optimize loading speed (minify CSS/JS if needed)
-- [ ] Add error handling for API calls
-- [ ] Final review and polish
+- [ ] Test accessibility (contrast, alt-text, keyboard focus)
+- [ ] Verify responsiveness across devices
+- [ ] Optimize performance (minify if needed)
+- [ ] Final review for professional tone and branding consistency
+- [ ] Deploy to GitHub Pages or similar for online access
