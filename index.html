@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basir Cyber Squad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="matrix-rain"></div>
+    <header>
+        <h1 id="title">Basir Cyber Squad</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#tools">Tools</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <div class="terminal">
+            <p class="typing">Welcome to Basir Cyber Squad... Initializing...</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Kami adalah squad cyber yang fokus pada keamanan digital, eksplorasi, dan inovasi. Bergabunglah dengan kami untuk belajar dan berbagi pengetahuan.</p>
+    </section>
+
+    <section id="tools">
+        <h2>Tools</h2>
+        <div class="tool-grid">
+            <div class="tool">
+                <h3>Password Generator</h3>
+                <p>Generate password kuat.</p>
+                <button onclick="generatePassword()">Generate</button>
+                <p id="password-output"></p>
+            </div>
+            <div class="tool">
+                <h3>IP Lookup</h3>
+                <p>Cek informasi IP.</p>
+                <input type="text" id="ip-input" placeholder="Masukkan IP">
+                <button onclick="lookupIP()">Lookup</button>
+                <p id="ip-output"></p>
+            </div>
+            <div class="tool">
+                <h3>Hash Generator</h3>
+                <p>Generate hash dari teks.</p>
+                <input type="text" id="hash-input" placeholder="Masukkan teks">
+                <select id="hash-type">
+                    <option value="md5">MD5</option>
+                    <option value="sha256">SHA-256</option>
+                </select>
+                <button onclick="generateHash()">Generate Hash</button>
+                <p id="hash-output"></p>
+            </div>
+            <div class="tool">
+                <h3>Base64 Encoder/Decoder</h3>
+                <p>Encode atau decode Base64.</p>
+                <textarea id="base64-input" placeholder="Masukkan teks"></textarea>
+                <button onclick="encodeBase64()">Encode</button>
+                <button onclick="decodeBase64()">Decode</button>
+                <p id="base64-output"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Nama" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Pesan" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Basir Cyber Squad. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
