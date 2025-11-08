@@ -1,36 +1,61 @@
-# TODO List for Basir Cyber Squad Website Enhancement
+# TODO: Website Enhancement - Basir Cyber Squad
 
-## Step 1: Add More Tools
-- [x] Add URL Encoder/Decoder tool
-- [x] Add String Analyzer tool
-- [x] Add Text Reverser tool
-- [x] Add Random Number Generator tool
-- [x] Update JavaScript functions for all new tools
+## Phase 1: Home Page Updates
+- [ ] Update hero section text to "Welcome to regar Cyber Squad Cybersecurity Education & Ethical Research – The Future of Ethical Hacking."
+- [ ] Add "Join Us" or "Explore Missions" button
+- [ ] Implement terminal/network animation background
+- [ ] Add matrix-style animation effects
 
-## Step 2: Add Video Background
-- [x] Add video element to hero section
-- [x] Add overlay for text readability
-- [x] Update CSS for video positioning and styling
-- [x] Add fallback image if video doesn't load
+## Phase 2: About Us Section
+- [ ] Expand about section with mission statement
+- [ ] Add team photos (silhouette hacker images)
+- [ ] Create timeline of activities/missions
+- [ ] Update about.html with detailed content
 
-## Step 3: Redesign for Modern Professional Look
-- [x] Update styles.css: Remove duplicates, modernize colors (dark theme with cyan accents), fix class names (.tool to .tool-card), improve layout and responsiveness
-- [x] Update index.html: Fix class names, enhance content descriptions, add features section
-- [x] Update script.js: Ensure all tools work, add any missing functionality
-- [x] Test all functionality and responsiveness
+## Phase 3: Cyber Articles/Knowledge Base
+- [ ] Expand blog.html with more cybersecurity articles
+- [ ] Add tutorials (phishing detection, brute force, sniffing)
+- [ ] Include tools recommendations (Wireshark, Metasploit, Burp Suite)
+- [ ] Add hacker terminology explanations (white hat, black hat, gray hat)
+- [ ] Implement tag/filter system (#Pentest, #NetworkSecurity, etc.)
 
-## Step 4: Final Testing and Deployment
-- [x] Test all new tools functionality
-- [x] Test video background loading and performance
-- [x] Ensure responsive design works with new elements
-- [x] Deploy to GitHub Pages or Netlify
-- [x] Verify all assets are accessible online
+## Phase 4: Tools & Resources
+- [ ] Create tools section with online password checker
+- [ ] Add network scanner simulator
+- [ ] Include API testing playground
+- [ ] Add Linux command cheat sheet
+- [ ] Implement fake interactive terminal
 
-## Step 5: Additional Enhancements (Completed)
-- [x] Add multiple pages: login, dashboard, blog, about, contact
-- [x] Add dark/light theme toggle
-- [x] Add more advanced tools (file hash, encryption, network scanner simulation)
-- [x] Add simple user authentication (local storage)
-- [x] Update navigation and responsive design
-- [x] Add blog/news section
-- [x] Test all new features and deploy
+## Phase 5: Hacker Profile/Members Page
+- [ ] Create members.html page
+- [ ] Add member profiles (RootX, Hexa, etc.)
+- [ ] Implement hover effects ("Access Denied" → "Access Granted")
+
+## Phase 6: Projects/Missions
+- [ ] Create projects.html page
+- [ ] Add project cards with status (Completed, In Progress, Classified)
+- [ ] Include CTF challenges, security programs
+
+## Phase 7: Forum/Chat Terminal
+- [ ] Create forum.html page
+- [ ] Add mini chat terminal
+- [ ] Implement discussion forum (dummy content)
+- [ ] Add anonymous comments with random avatars
+
+## Phase 8: Contact/Join Form
+- [ ] Update contact.html with terminal-style form
+- [ ] Add loading effects and success messages
+- [ ] Style as "Send Transmission" form
+
+## Phase 9: Additional Features
+- [ ] Implement terminal mode (type commands: help, about, join)
+- [ ] Add audio effects (optional)
+- [ ] Create level system for visitors
+- [ ] Add easter eggs (type "root access" for hacking animation)
+
+## Phase 10: Technical Implementation
+- [ ] Integrate Typed.js for terminal effects
+- [ ] Add GSAP animations
+- [ ] Implement particles.js for matrix effects
+- [ ] Test all features across devices
+- [ ] Deploy updates to GitHub Pages
